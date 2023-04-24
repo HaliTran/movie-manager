@@ -4,12 +4,12 @@ The data will be stored in a SQLite database.
 
 """
 
-from Model import Model
+from .Model import Model
 import sqlite3
 DB_FILE = 'campus.db'    # file for our database
 
 
-class mode(Model):
+class model(Model):
     def __init__(self):
         # Check if our db exist, if not then create it.
         connection = sqlite3.connect(DB_FILE)

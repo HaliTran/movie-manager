@@ -1,8 +1,9 @@
-{% extends "layout.html" %} {% block content %}
+{% extends "layout.html" %} 
+{% block content %}
 
 <h1>Add Study Space</h1>
 
-<form action="{{ url_for('add')}}" method="post">
+<form action="{{ url_for('entry')}}" method="post">
   <div>
     <label for="building">Building Name</label>
     <input type="text" id="building" name="building" />
