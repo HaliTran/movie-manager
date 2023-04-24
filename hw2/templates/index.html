@@ -1,14 +1,14 @@
 {% extends "layout.html" %} 
 {% block content %}
-    <h2><a href="{{ url_for('entry') }}">Add Study Space</a></h2>
+    <h3><a href="{{ url_for('entry') }}">Add Study Space</a></h3>
 
     <h1>Portland State University</h1>
     <h2>Study Spaces on Campus</h2>
 
-    {% for spaces in studyspace %}
-        <h3>{{ spaces.building }} <span>{{ spaces.code }}</span></h3>
+    {% for spaces in studySpace %}
+        <p>Building Name: {{ spaces.building }} <span>({{ spaces.code }})</span></p>
         <p>Location: {{ spaces.location }}</p>
-        <p>Rating (0-10): {{ spaces.rating }}</p>
+        <p>Rating: {{ spaces.rating }}/10</p>
         <br />
     {% endfor %} 
 {% endblock %}
