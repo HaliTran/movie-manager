@@ -1,0 +1,14 @@
+{% extends "layout.html" %} {% block content %}
+
+<h2><a href="{{ url_for('add') }}">Add Study Space</a></h2>
+
+<h1>Portland State University</h1>
+<h2>Study Spaces on Campus</h2>
+
+{% for spaces in studyspace %}
+<h3>{{ spaces.building }} <span>{{ spaces.code }}</span></h3>
+<p>Location: {{ spaces.location }}</p>
+<p>Rating (0-10): {{ spaces.rating }}</p>
+<br />
+
+{% end for %} {% endblock %}
