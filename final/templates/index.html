@@ -1,17 +1,20 @@
 {% extends "layout.html" %} 
 {% block content %}
-	<header class="text-center my-5">
-			<h3><a href="{{ url_for('entry') }}">Add Study Space</a></h3>
-			<h1>Portland State University</h1>
-			<h2>Study Spaces on Campus</h2>
+	<header class="text-center mt-3">
+			<h1>Movie Manager</h1>
+			<p>Welcome to the only movie manager tool you'll need!</p>
 	</header>
 
-	<main class="w-50 m-auto text-center">
-		{% for spaces in studySpace %}
-			<p>Building Name: {{ spaces.building }} <span>({{ spaces.code }})</span></p>
-			<p>Location: {{ spaces.location }}</p>
-			<p>Rating: {{ spaces.rating }}/10</p>
-			<br />
-		{% endfor %} 
-	</main>
+	<form class="text-center">
+		<div>
+			<label for="movie-title">Title</label>
+			<input type="text" id="movie-title" name="movie-title" required>
+		</div>
+		<div>
+			<label for="release-year">Release Year</label>
+			<input type="text" id="release-year" name="release-year" placeholder="optional">
+		</div>
+		<button type="submit">Search</button>
+	</form>
+	
 {% endblock %}
