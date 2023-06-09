@@ -10,7 +10,7 @@ from index import Index
 
 app = flask.Flask(__name__)
 
-app.add_url_rule('/', view_func=Index.as_view('index'), methods=["GET"])
+app.add_url_rule('/', view_func=Index.as_view('index'), methods=["GET", "POST"])
 
 # app.add_url_rule('/entry', view_func=Entry.as_view('entry'), methods=["GET", "POST"])
 
