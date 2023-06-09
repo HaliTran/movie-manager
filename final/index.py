@@ -19,7 +19,7 @@ class Index(MethodView):
             "year": release_year
         }
         movie_details = self.get_movie_data(movie_data)
-        return "Placeholder return value"
+        return render_template("index.html", movie=movie_details)
     
     def get_movie_data(self, query):
         param = {
@@ -36,8 +36,8 @@ class Index(MethodView):
             else:
                 error["error_message"] = f"There was a {response.status_code} error with your requests"
                 return error
-        except requests.ConnectionError as e:
-                error["error_message"] = f"There was a {str(e)} error with your requests"
-                return error
+        except (requests.ConnectionError, requests.HTTPError, requests.Timeout, requests.TooManyRedirects) as e:
+            error["error_message"] = f"There was a '{str(e)}' error with your requests."
+            return error
         else:
             return response
