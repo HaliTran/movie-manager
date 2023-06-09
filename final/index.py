@@ -9,11 +9,11 @@ class Index(MethodView):
         return render_template("index.html")
     
     def post(self):
-        movieTitle = request.form.get("movie-title")
-        releaseYear = request.form.get("release-year")
-        movieData = {
-            "title": movieTitle,
-            "year": releaseYear
+        movie_title = request.form.get("movie_title")
+        release_year = request.form.get("release_year")
+        movie_data = {
+            "title": movie_title,
+            "year": release_year
         }
-
         return "Placeholder return value"
+    
