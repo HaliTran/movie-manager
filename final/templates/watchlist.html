@@ -3,6 +3,19 @@
 {% block content %}
 <header class="text-center mt-3">
   <h1>Watchlist</h1>
+  <p>You have to start these movies sooner or later...</p>
+
+  <nav class="navbar navbar-expand-md justify-content-center">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="{{ url_for('index')}}" class="nav-link active">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url_for('watchlist')}}" class="nav-link active">Watchlist</a>
+      </li>
+    </ul>
+  </nav>
+
 </header>
 
 {% endblock %}
