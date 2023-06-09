@@ -1,5 +1,8 @@
 from flask import render_template, request
 from flask.views import MethodView
+import os
+
+API_KEY = os.environ.get('API_KEY')
 
 class Index(MethodView):
     def get(self):
