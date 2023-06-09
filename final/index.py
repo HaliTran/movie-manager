@@ -13,10 +13,8 @@ class Index(MethodView):
     
     def post(self):
         movie_title = request.form.get("movie_title")
-        release_year = request.form.get("release_year")
         movie_data = {
             "title": movie_title,
-            "year": release_year
         }
         movie_details = self.get_movie_data(movie_data)
         return render_template("index.html", movie=movie_details)
@@ -25,7 +23,6 @@ class Index(MethodView):
         param = {
             "apikey": API_KEY,
             "t": query["title"],
-            "y": query["year"]
         }
         error = {}
         try:

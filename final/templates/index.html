@@ -5,17 +5,12 @@
 			<p>Welcome to the only movie manager tool you'll need!</p>
 	</header>
 
-	<form action="{{ url_for('index') }}" method="post" class="text-center">
-		<div>
-			<label for="movie_title">Title</label>
-			<input type="text" id="movie_title" name="movie_title" required>
+	<form action="{{ url_for('index') }}" method="post" class="w-50 m-auto">
+		<div class="input-group">
+			<input type="text" id="movie_title" name="movie_title" class="form-control" aria-label="Movie Title" placeholder="E.g The Empire Strikes Back" required>
+			<button type="submit" class="btn btn-primary">Search</button>
 		</div>
-		<div>
-			<label for="release_year">Release Year</label>
-			<input type="text" id="release_year" name="release_year" placeholder="optional">
-		</div>
-		<button type="submit">Search</button>
-	</form>
+</form>
 
 	{% if movie %}
 		{% if "error_message" in movie %}
