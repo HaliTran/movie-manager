@@ -35,15 +35,27 @@
 				<p>Please ensure your input is correct and try again</p>
 			</div>
 		{% else %}
-			<div class="w-50 m-auto text-center mt-3">
-				<h1>Top Search Result</h1>
-				<img src="{{ movie.Poster }}" alt="Movie poster for {{ movie.Title }}">
-				<h2>{{ movie.Title }}</h2>
-				<p>{{ movie.Plot }}</p>
-				<p>Release Year: {{ movie.Released }}</p>
-				<p>Rated: {{ movie.Rated }}</p>
-				<p>Runtime: {{ movie.Runtime }}</p>
+			<div class="w-50 m-auto text-center mt-3 mb-5">
+				<div>
+					<h1>Top Search Result</h1>
+					<img src="{{ movie.Poster }}" alt="Movie poster for {{ movie.Title }}">
+					<h2>{{ movie.Title }}</h2>
+					<p>{{ movie.Plot }}</p>
+					<p>Release Year: {{ movie.Released }}</p>
+					<p>Rated: {{ movie.Rated }}</p>
+					<p>Runtime: {{ movie.Runtime }}</p>
+				</div>
+				<form action="{{ url_for('watchlist')}}" method="post">
+					<input type="hidden" id="movie" name="movie" value="{{ movie.Title }}">
+					<input type="hidden" id="plot" name="plot" value="{{ movie.Plot }}">
+					<input type="hidden" id="year" name="year" value="{{ movie.Released }}">
+					<input type="hidden" id="rated" name="rated" value="{{ movie.Rated }}">
+					<input type="hidden" id="runtime" name="runtime" value="{{ movie.Runtime }}">
+					<input type="hidden" id="id" name="id" value="{{ movie.imdbID }}">
+					<button type="submit">Add to Watchlist</button>
+				</form>
 			</div>
+
 		{% endif %}
 	{% endif %}
 	
