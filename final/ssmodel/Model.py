@@ -11,14 +11,17 @@ class Model():
         :return: Tuple containing all rows in the database
         """
         pass
-    def insert(self, building, buildingCode, floor, rating):
+    def insert(self, movie_info):
         """
-        Inserts into the database information regarding campus study spaces
-        :param building: String
-        :param buildingCode: String
-        :param location: String
-        :param rating: Number
-        :return: none
+        Inserts into the database information regarding a movie
+        :param movie_info: dictionary with details about a movie
+        :key poster: String (url of img location)
+        :key title: String
+        :key plot: String
+        :key year: String
+        :key rated: String
+        :key runtime: String
+        :key imdb_id: String
         :raises: Database errors on connection and insertion
         """
         pass

@@ -30,9 +30,9 @@
 				<p>{{ movie.error_message }}</p>
 			</div>
 		{% elif movie.Response == "False" %}
-			<div>
-				<h3>The movie does not exist and/or could not be found</h3>
-				<p>Please ensure your input is correct and try again</p>
+			<div class="w-50 m-auto text-center mt-5">
+				<h4>The movie does not exist and/or could not be found!</h4>
+				<p>Please ensure your input is correct and try again.</p>
 			</div>
 		{% else %}
 			<div class="w-50 m-auto text-center mt-3 mb-5">
@@ -46,12 +46,13 @@
 					<p>Runtime: {{ movie.Runtime }}</p>
 				</div>
 				<form action="{{ url_for('watchlist')}}" method="post">
-					<input type="hidden" id="movie" name="movie" value="{{ movie.Title }}">
+					<input type="hidden" id="poster" name="poster" value="{{ movie.Poster }}">
+					<input type="hidden" id="title" name="title" value="{{ movie.Title }}">
 					<input type="hidden" id="plot" name="plot" value="{{ movie.Plot }}">
 					<input type="hidden" id="year" name="year" value="{{ movie.Released }}">
 					<input type="hidden" id="rated" name="rated" value="{{ movie.Rated }}">
 					<input type="hidden" id="runtime" name="runtime" value="{{ movie.Runtime }}">
-					<input type="hidden" id="id" name="id" value="{{ movie.imdbID }}">
+					<input type="hidden" id="imdb_id" name="imdb_id" value="{{ movie.imdbID }}">
 					<button type="submit">Add to Watchlist</button>
 				</form>
 			</div>
