@@ -3,9 +3,10 @@ from flask import render_template, redirect, request, url_for
 import ssmodel
 
 class Watchlist(MethodView):
-    # Still need to retrieve movies from Cloud Datastore
     def get(self):
-        return render_template("watchlist.html")
+        db = ssmodel.get_model()
+        entities = db.select()
+        return render_template("watchlist.html", movies=entities)
 
     def post(self):
         db = ssmodel.get_model()

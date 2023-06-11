@@ -4,7 +4,14 @@ from google.cloud import datastore
 class model(Model):
     def __init__(self):
         self.client = datastore.Client('cloud-tran-hali5')
-
+    
+    def select(self):
+        query = self.client.query(kind = 'Movies')
+        entities = list(query.fetch())
+        if(len(entities) == 0):
+            return None
+        return entities
+        
     def insert(self, movie_info):
         key = self.client.key('Movies')
         movie = datastore.Entity(key)

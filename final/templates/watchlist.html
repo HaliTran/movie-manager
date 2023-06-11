@@ -15,7 +15,23 @@
       </li>
     </ul>
   </nav>
-
 </header>
+
+  {% if movies == None %}
+    <h4 class="text-center mt-3">There are no movies on your watchlist.</h4>
+  {% else %}
+    <div class="d-flex flex-wrap">
+      {% for movie in movies %}
+        <div>
+          <img src="{{ movie['poster'] }}"alt="Movie poster for {{ movie.title }}">
+          <h2>{{ movie.title }}</h2>
+          <p>{{ movie.plot }}</p>
+          <p>Release Year: {{ movie.year }}</p>
+          <p>Rated: {{ movie.rated }}</p>
+          <p>Runtime: {{ movie.runtime }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
 
 {% endblock %}
