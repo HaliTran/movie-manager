@@ -1,0 +1,10 @@
+.poster {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.flex-item {
+  width: 20%;
+  max-height: 100%;
+  padding: 0 30px;
+}

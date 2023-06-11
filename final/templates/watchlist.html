@@ -3,7 +3,7 @@
 {% block content %}
 <header class="text-center mt-3">
   <h1>Watchlist</h1>
-  <p>You have to start these movies sooner or later...</p>
+  <p>You'll have to start these movies sooner or later...</p>
 
   <nav class="navbar navbar-expand-md justify-content-center">
     <ul class="navbar-nav">
@@ -20,16 +20,16 @@
   {% if movies == None %}
     <h4 class="text-center mt-3">There are no movies on your watchlist.</h4>
   {% else %}
-    <div class="d-flex flex-wrap">
+    <div class="d-flex flex-wrap mt-3 justify-content-start">
       {% for movie in movies %}
-        <div>
-          <img src="{{ movie['poster'] }}"alt="Movie poster for {{ movie.title }}">
-          <h2>{{ movie.title }}</h2>
-          <p>{{ movie.plot }}</p>
-          <p>Release Year: {{ movie.year }}</p>
-          <p>Rated: {{ movie.rated }}</p>
-          <p>Runtime: {{ movie.runtime }}</p>
-        </div>
+      <div class="flex-item">
+        <img src="{{ movie['poster'] }}" alt="Movie poster for {{ movie.title }}" class="poster">
+        <h2>{{ movie.title }}</h2>
+        <p>{{ movie.plot }}</p>
+        <p>Release Year: {{ movie.year }}</p>
+        <p>Rated: {{ movie.rated }}</p>
+        <p>Runtime: {{ movie.runtime }}</p>
+      </div>
       {% endfor %}
     </div>
   {% endif %}
