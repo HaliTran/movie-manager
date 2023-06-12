@@ -29,6 +29,10 @@
         <p>Release Year: {{ movie.year }}</p>
         <p>Rated: {{ movie.rated }}</p>
         <p>Runtime: {{ movie.runtime }}</p>
+        <form action="{{ url_for('delete_movie') }}" method="post">
+          <input type="hidden" id="imdb_id" name="imdb_id" value="{{ movie.imdb_id }}">
+          <button type="submit">Remove from Watchlist</button>
+        </form>
       </div>
       {% endfor %}
     </div>

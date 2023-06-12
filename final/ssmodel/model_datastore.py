@@ -13,7 +13,8 @@ class model(Model):
         return entities
         
     def insert(self, movie_info):
-        key = self.client.key('Movies')
+        unique_id = movie_info["imdb_id"]
+        key = self.client.key('Movies', unique_id)
         movie = datastore.Entity(key)
         movie.update( {
             "poster" : movie_info["poster"],
@@ -22,7 +23,13 @@ class model(Model):
             "year" : movie_info["year"],
             "rated" : movie_info["rated"],
             "runtime" : movie_info["runtime"],
-            "imdbID" : movie_info["imdb_id"]
+            "imdb_id" : movie_info["imdb_id"]
             })
         self.client.put(movie)
         return True
+    
+    def delete(self, imdb_id):
+        key = self.client.key("Movies", imdb_id)
+        self.client.delete(key)
+        return True
+        
