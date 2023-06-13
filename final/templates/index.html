@@ -19,7 +19,7 @@
 
 	<form action="{{ url_for('index') }}" method="post" class="w-50 m-auto">
 		<div class="input-group">
-			<input type="text" id="movie_title" name="movie_title" class="form-control" aria-label="Movie Title" placeholder="E.g The Empire Strikes Back" required>
+			<input type="text" id="movie_title" name="movie_title" class="form-control" aria-label="Movie Title" placeholder="E.g The Godfather" required>
 			<button type="submit" class="btn btn-primary">Search</button>
 		</div>
 	</form>
@@ -41,7 +41,7 @@
 					<img src="{{ movie.Poster }}" alt="Movie poster for {{ movie.Title }}">
 					<h2>{{ movie.Title }}</h2>
 					<p>{{ movie.Plot }}</p>
-					<p>Release Year: {{ movie.Released }}</p>
+					<p>Release Date: {{ movie.Released }}</p>
 					<p>Rated: {{ movie.Rated }}</p>
 					<p>Runtime: {{ movie.Runtime }}</p>
 				</div>
@@ -49,7 +49,7 @@
 					<input type="hidden" id="poster" name="poster" value="{{ movie.Poster }}">
 					<input type="hidden" id="title" name="title" value="{{ movie.Title }}">
 					<input type="hidden" id="plot" name="plot" value="{{ movie.Plot }}">
-					<input type="hidden" id="year" name="year" value="{{ movie.Released }}">
+					<input type="hidden" id="date" name="date" value="{{ movie.Released }}">
 					<input type="hidden" id="rated" name="rated" value="{{ movie.Rated }}">
 					<input type="hidden" id="runtime" name="runtime" value="{{ movie.Runtime }}">
 					<input type="hidden" id="imdb_id" name="imdb_id" value="{{ movie.imdbID }}">

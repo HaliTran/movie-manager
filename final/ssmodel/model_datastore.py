@@ -20,7 +20,7 @@ class model(Model):
             "poster" : movie_info["poster"],
             "title" : movie_info["title"],
             "plot" : movie_info["plot"],
-            "year" : movie_info["year"],
+            "date" : movie_info["date"],
             "rated" : movie_info["rated"],
             "runtime" : movie_info["runtime"],
             "imdb_id" : movie_info["imdb_id"]

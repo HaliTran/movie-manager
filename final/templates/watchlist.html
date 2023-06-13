@@ -20,13 +20,13 @@
   {% if movies == None %}
     <h4 class="text-center mt-3">There are no movies on your watchlist.</h4>
   {% else %}
-    <div class="d-flex flex-wrap mt-3 justify-content-start">
+    <div class="d-flex flex-wrap mt-3 mb-5 justify-content-start">
       {% for movie in movies %}
-      <div class="flex-item">
+      <div class="flex-item mb-3">
         <img src="{{ movie['poster'] }}" alt="Movie poster for {{ movie.title }}" class="poster">
         <h2>{{ movie.title }}</h2>
         <p>{{ movie.plot }}</p>
-        <p>Release Year: {{ movie.year }}</p>
+        <p>Release Date: {{ movie.date }}</p>
         <p>Rated: {{ movie.rated }}</p>
         <p>Runtime: {{ movie.runtime }}</p>
         <form action="{{ url_for('delete_movie') }}" method="post">
