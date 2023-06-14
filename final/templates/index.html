@@ -1,6 +1,6 @@
 {% extends "layout.html" %} 
 {% block content %}
-	<header class="text-center mt-3">
+	<header class="text-center mt-2">
 			<h1>Movie Manager</h1>
 			<p>A simple way to manage the movies you plan on watching!</p>
 
@@ -35,11 +35,11 @@
 				<p>Please ensure your input is correct and try again.</p>
 			</div>
 		{% else %}
-			<div class="w-50 m-auto text-center mt-3 mb-5">
+			<div class="w-25 m-auto text-center mt-3 mb-5">
 				<div>
-					<h1>Top Search Result</h1>
-					<img src="{{ movie.Poster }}" alt="Movie poster for {{ movie.Title }}">
-					<h2>{{ movie.Title }}</h2>
+					<h2>Top Search Result</h2>
+					<img src="{{ movie.Poster }}" alt="Movie poster for {{ movie.Title }}" class="poster">
+					<h3>{{ movie.Title }}</h3>
 					<p>{{ movie.Plot }}</p>
 					<p>Release Date: {{ movie.Released }}</p>
 					<p>Rated: {{ movie.Rated }}</p>
@@ -53,7 +53,7 @@
 					<input type="hidden" id="rated" name="rated" value="{{ movie.Rated }}">
 					<input type="hidden" id="runtime" name="runtime" value="{{ movie.Runtime }}">
 					<input type="hidden" id="imdb_id" name="imdb_id" value="{{ movie.imdbID }}">
-					<button type="submit">Add to Watchlist</button>
+					<button type="submit" class="btn btn-secondary">Add to Watchlist</button>
 				</form>
 			</div>
 
