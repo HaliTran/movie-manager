@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<header class="text-center mt-3">
+  <h1>Compare</h1>
+  <p>See how two movies compare to one another!</p>
+
+  <nav class="navbar navbar-expand-md justify-content-center">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="{{ url_for('index')}}" class="nav-link active">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url_for('watchlist')}}" class="nav-link active">Watchlist</a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url_for('compare')}}" class="nav-link active">Compare</a>
+      </li>
+    </ul>
+    </ul>
+  </nav>
+</header>
+{% endblock %}

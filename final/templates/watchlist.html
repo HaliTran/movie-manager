@@ -3,7 +3,7 @@
 {% block content %}
 <header class="text-center mt-3">
   <h1>Watchlist</h1>
-  <p>You'll have to start these movies sooner or later...</p>
+  <p>You'll have to start these movies sooner or later!</p>
 
   <nav class="navbar navbar-expand-md justify-content-center">
     <ul class="navbar-nav">
@@ -13,6 +13,10 @@
       <li class="nav-item">
         <a href="{{ url_for('watchlist')}}" class="nav-link active">Watchlist</a>
       </li>
+      <li class="nav-item">
+        <a href="{{ url_for('compare')}}" class="nav-link active">Compare</a>
+      </li>
+    </ul>
     </ul>
   </nav>
 </header>
