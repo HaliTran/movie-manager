@@ -19,6 +19,15 @@ app.add_url_rule('/compare', view_func=Compare.as_view('compare'), methods=["GET
 
 @app.route('/watchlist/delete', methods=["POST"])
 def delete_movie():
+    """
+    Function based view to handle deletion of movie from database backend
+
+    Parameter:
+        None (triggered on form submit to delete movie from watchlist)
+    
+    Returns:
+        Redirect response object to "watchlist.html"
+    """
     imdb_id = request.form.get("imdb_id")
     db = ssmodel.get_model()
     db.delete(imdb_id)

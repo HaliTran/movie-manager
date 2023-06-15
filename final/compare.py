@@ -3,6 +3,22 @@ from flask import render_template, url_for, request
 from utils.utility import get_movie_data
 
 class Compare(MethodView):
+    """
+    Class-based view for retrieving and displaying two movies to compare
+
+    This view handles both GET and POST HTTP requests
+
+    URL Endpoint: '/'
+        HTTP Verb: GET
+        Parameter: None
+        Returns: Rendered template "compare.html" with movie information object
+
+        HTTP Verb: POST
+        Purpose: Retrieve movie information to compare
+        Parameter: None
+        Returns: Rendered template "compare.html" with two movie information object
+    
+    """
     def get(self):
         return render_template("compare.html")
 

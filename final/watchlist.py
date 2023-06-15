@@ -3,6 +3,23 @@ from flask import render_template, redirect, request, url_for
 import ssmodel
 
 class Watchlist(MethodView):
+    """
+    Class-based view for retrieving and storing movie information to model backend
+
+    This view handles both GET and POST HTTP requests
+
+    URL Endpoint: '/'
+        HTTP Verb: GET
+        Purpose: Retrieve movie information from database backend
+        Parameter: None
+        Returns: Rendered template "watchlist.html" with movie information object
+
+        HTTP Verb: POST
+        Purpose: Store movie information to database backend
+        Parameter: None
+        Returns: Redirect response object to template "watchlist.html"
+    
+    """
     def get(self):
         db = ssmodel.get_model()
         entities = db.select()
