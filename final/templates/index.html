@@ -44,6 +44,7 @@
 					<img src="{{ movie.Poster }}" alt="Movie poster for {{ movie.Title }}" class="poster">
 					<h3>{{ movie.Title }}</h3>
 					<p>{{ movie.Plot }}</p>
+					<p>Genre: {{ movie.Genre }}</p>
 					<p>Release Date: {{ movie.Released }}</p>
 					<p>Rated: {{ movie.Rated }}</p>
 					<p>Runtime: {{ movie.Runtime }}</p>
@@ -52,6 +53,7 @@
 					<input type="hidden" id="poster" name="poster" value="{{ movie.Poster }}">
 					<input type="hidden" id="title" name="title" value="{{ movie.Title }}">
 					<input type="hidden" id="plot" name="plot" value="{{ movie.Plot }}">
+					<input type="hidden" id="genre" name="genre" value="{{ movie.Genre }}">
 					<input type="hidden" id="date" name="date" value="{{ movie.Released }}">
 					<input type="hidden" id="rated" name="rated" value="{{ movie.Rated }}">
 					<input type="hidden" id="runtime" name="runtime" value="{{ movie.Runtime }}">

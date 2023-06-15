@@ -1,11 +1,6 @@
 from flask import render_template, request
 from flask.views import MethodView
 from utils.utility import get_movie_data
-import os
-
-API_KEY = os.environ.get('API_KEY')
-API_URL = "http://www.omdbapi.com/"
-
 
 class Index(MethodView):
     def get(self):

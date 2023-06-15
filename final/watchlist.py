@@ -13,6 +13,7 @@ class Watchlist(MethodView):
         poster = request.form.get("poster")
         title = request.form.get("title")
         plot = request.form.get("plot")
+        genre = request.form.get("genre")
         date = request.form.get("date")
         rated = request.form.get("rated")
         runtime = request.form.get("runtime")
@@ -21,6 +22,7 @@ class Watchlist(MethodView):
             "poster" : poster,
             "title" : title,
             "plot" : plot,
+            "genre": genre,
             "date" : date,
             "rated" : rated,
             "runtime" : runtime,
