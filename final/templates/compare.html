@@ -2,8 +2,8 @@
 
 {% block content %}
   <header class="text-center mt-3">
-    <h1>Compare</h1>
-    <p>See how two movies compare to one another!</p>
+    <h1>Compare Movies</h1>
+    <p>See how two movies rank among each other!</p>
 
     <nav class="navbar navbar-expand-md justify-content-center">
       <ul class="navbar-nav">
@@ -26,16 +26,70 @@
       <div class="col-md-6">
         <div class="input-group">
           <input type="text" id="movie_title1" name="movie_title1" class="form-control" aria-label="Movie Title" placeholder="E.g Toy Story" required>
-          <button type="submit" class="btn btn-primary">Search</button>
+          <button type="submit" class="btn btn-primary">Compare</button>
         </div>
       </div>
       <div class="col-md-6">
         <div class="input-group">
           <input type="text" id="movie_title2" name="movie_title2" class="form-control" aria-label="Movie Title" placeholder="E.g Inside Out" required>
-          <button type="submit" class="btn btn-primary">Search</button>
+          <button type="submit" class="btn btn-primary">Compare</button>
         </div>
       </div>
     </form>
+    <div class="row mt-3">
+      <div class="col-md-6">
+        {% if movie1 %}
+          {% if "error_message" in movie1 %}
+            <div class="w-50 m-auto mt-5">
+              <p>{{ movie1.error_message }}</p>
+            </div>
+          {% elif movie1.Response == "False" %}
+            <div class="w-50 m-auto text-center mt-5">
+              <h4>The movie does not exist and/or could not be found!</h4>
+              <p>Please ensure your input is correct and try again.</p>
+            </div>
+          {% else %}
+            <img src="{{ movie1.Poster }}" alt="Movie poster for {{ movie1.Title }}" class="poster">
+            <h3>{{ movie1.Title }}</h3>
+            <p>{{ movie1.Plot }}</p>
+            <p>Genre: {{ movie1.Genre }}</p>
+            <p>Awards: {{ movie1.Awards }}</p>
+            {% for rating in movie1.Ratings %}
+              <p>{{ rating.Source }}: {{ rating.Value }}</p>
+            {% endfor %}
+            <p>Metascore: {{ movie1.Metascore }}</p>
+            <p>Imdb Rating: {{ movie1.imdbRating }}</p>
+            <p>Box Office: {{ movie1.BoxOffice }}</p>
+          {% endif %}
+        {% endif %}
+      </div>
+      <div class="col-md-6">
+        {% if movie2 %}
+          {% if "error_message" in movie2 %}
+            <div class="w-50 m-auto mt-5">
+              <p>{{ movie2.error_message }}</p>
+            </div>
+          {% elif movie2.Response == "False" %}
+            <div class="w-50 m-auto text-center mt-5">
+              <h4>The movie does not exist and/or could not be found!</h4>
+              <p>Please ensure your input is correct and try again.</p>
+            </div>
+          {% else %}
+            <img src="{{ movie2.Poster }}" alt="Movie poster for {{ movie2.Title }}" class="poster">
+            <h3>{{ movie2.Title }}</h3>
+            <p>{{ movie2.Plot }}</p>
+            <p>Genre: {{ movie2.Genre }}</p>
+            <p>Awards: {{ movie2.Awards }}</p>
+            {% for rating in movie2.Ratings %}
+              <p>{{ rating.Source }}: {{ rating.Value }}</p>
+            {% endfor %}
+            <p>Metascore: {{ movie2.Metascore }}</p>
+            <p>Imdb Rating: {{ movie2.imdbRating }}</p>
+            <p>Box Office: {{ movie2.BoxOffice }}</p>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
   </div>
 
 {% endblock %}
