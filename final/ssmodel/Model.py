@@ -7,21 +7,28 @@ different types of backend models for data storage and manipulation.
 class Model():
     def select(self):
         """
-        Return all entries in the database
-        :return: Tuple containing all rows in the database
+        Returns all entries in the database.
+        
+        Returns:
+            List containing all rows in the database
         """
         pass
     def insert(self, movie_info):
         """
         Inserts into the database information regarding a movie
-        :param movie_info: dictionary with details about a movie
-        :key poster: String (url of img location)
-        :key title: String
-        :key plot: String
-        :key year: String
-        :key rated: String
-        :key runtime: String
-        :key imdb_id: String
-        :raises: Database errors on connection and insertion
+        
+        Parameter:
+            movie_info: dictionary object with details about a movie
+            
+        Key Required for movie_info dictionary
+            poster: String (url of image location)
+            title:  String
+            plot: String
+            year: String
+            rated: String
+            runtime: String
+            imdb_id: String
+            
+        Raises database errors on connection and insertion
         """
         pass
