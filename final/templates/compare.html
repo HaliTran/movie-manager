@@ -1,23 +1,41 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<header class="text-center mt-3">
-  <h1>Compare</h1>
-  <p>See how two movies compare to one another!</p>
+  <header class="text-center mt-3">
+    <h1>Compare</h1>
+    <p>See how two movies compare to one another!</p>
 
-  <nav class="navbar navbar-expand-md justify-content-center">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a href="{{ url_for('index')}}" class="nav-link active">Home</a>
-      </li>
-      <li class="nav-item">
-        <a href="{{ url_for('watchlist')}}" class="nav-link active">Watchlist</a>
-      </li>
-      <li class="nav-item">
-        <a href="{{ url_for('compare')}}" class="nav-link active">Compare</a>
-      </li>
-    </ul>
-    </ul>
-  </nav>
-</header>
+    <nav class="navbar navbar-expand-md justify-content-center">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="{{ url_for('index')}}" class="nav-link active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ url_for('watchlist')}}" class="nav-link active">Watchlist</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ url_for('compare')}}" class="nav-link active">Compare</a>
+        </li>
+      </ul>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="w-50 m-auto">
+    <form action="{{ url_for('compare') }}" method="post" class="row">
+      <div class="col-md-6">
+        <div class="input-group">
+          <input type="text" id="movie_title1" name="movie_title1" class="form-control" aria-label="Movie Title" placeholder="E.g Toy Story" required>
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group">
+          <input type="text" id="movie_title2" name="movie_title2" class="form-control" aria-label="Movie Title" placeholder="E.g Inside Out" required>
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
 {% endblock %}
