@@ -32,3 +32,14 @@ class Model():
         Raises database errors on connection and insertion
         """
         pass
+
+    def delete(self, imdb_id):
+        """
+        Deletes a movie from the database backend
+        
+        Parameter:
+            imdb_id: String (unique imdb id of the movie to be deleted)
+            
+        Raises database errors on deletion
+        """
+        pass
